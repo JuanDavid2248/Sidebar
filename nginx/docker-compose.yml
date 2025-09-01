@@ -1,0 +1,21 @@
+services:
+nginx:
+  build: ./nginx
+  ports:
+    - "8080:80"
+  depends_on:
+    - main
+    - exp
+main:
+  build: ./backend  
+  container_name: main
+  environment:
+    - FLASK_APP=main_server.py  
+volumes:
+    - ./backend:/app
+cadvisor:
+  image: google/cadvisor:latest
+  container_name: cadvisor
+  ports:
+    - "8080:8080"
+ 
