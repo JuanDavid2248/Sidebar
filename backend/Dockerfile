@@ -2,4 +2,4 @@ FROM python:3.11-slim
 WORKDIR /app
 COPY . .
 RUN pip install flask 
-CMD [ "python", "main_server.py" ]
+CMD ["python", "main_server.py"]
