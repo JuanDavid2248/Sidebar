@@ -1,0 +1,5 @@
+pip install locust
+
+locust -f locusfile.py -H http://localhost:8081
+
+ 
